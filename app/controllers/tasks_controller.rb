@@ -1,12 +1,4 @@
-class CatalogController < ApplicationController
-
-  def show
-    if (id = params[:id])
-      render json: Catalog.find(id), status: 200
-    else
-      render json: Catalog.all, status: 200
-    end
-  end
+class TasksController < ApplicationController
 
   def create
     @entity = Category.find(params[:categoryId])
@@ -18,6 +10,15 @@ class CatalogController < ApplicationController
     else
       render json: @entity.errors, status: 400
     end
+  end
+
+  def update
+    @entity = Category.find(params[:categoryId])
+                      .tasks
+                      .find(params[:id])
+    @entity.update('is_completed': !@entity.is_completed)
+
+    render json: @entity, status: 200
   end
 
 end
