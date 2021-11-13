@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/catalog', to: 'catalog#show'
+  get '/catalog/:id', to: 'catalog#show'
+  post '/catalog/create', to: 'catalog#create'
 
-  # Almost every application defines a route for the root path ("/") at the top of this file.
-  # root "articles#index"
+  get '/category', to: 'category#show'
+  get '/category/:id', to: 'category#show'
+  post '/category/create', to: 'category#create'
+
+  get '/project', to: 'project#index'
+
+  get '/task', to: 'task#show'
+  get '/task/:id', to: 'task#show'
+  delete '/task/:id', to: 'task#remove'
+
 end
