@@ -1,7 +1,7 @@
 
-# Этап №1
+# Этап №2
 
-![изображение](https://user-images.githubusercontent.com/60661613/141614064-d461ad4e-2b77-47f0-9907-46fcf41afa8b.png)
+![изображение](https://user-images.githubusercontent.com/60661613/141678344-3e397ed8-a77f-4f36-bc3f-c276ddce622d.png)
 
 
 
