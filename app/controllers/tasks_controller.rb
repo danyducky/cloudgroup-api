@@ -1,14 +1,18 @@
 class TasksController < ApplicationController
 
   def create
-    @entity = Category.find(params[:categoryId])
-                      .tasks
-                      .create(text: params[:text], 'is_completed': false)
+    @category = Category.find_or_create_by(id: params[:categoryId]) do |category|
+      category.id = Category.maximum(:id).to_i + 1
+      category.title = params[:categoryTitle]
+    end
 
-    if @entity.valid?
-      render json: {id: @entity.id}, status: 200
+    @task = @category.tasks
+                     .create(text: params[:text], 'is_completed': false)
+
+    if @task.valid?
+      render json: {id: @task.id}, status: 200
     else
-      render json: @entity.errors, status: 400
+      render json: @task.errors, status: 400
     end
   end
 
@@ -16,9 +20,10 @@ class TasksController < ApplicationController
     @entity = Category.find(params[:categoryId])
                       .tasks
                       .find(params[:id])
-    @entity.update('is_completed': !@entity.is_completed)
 
-    render json: @entity, status: 200
+    @status = @entity.toggle!(:is_completed)
+
+    render json: {success: @status, task: @entity}, status: 200
   end
 
 end
