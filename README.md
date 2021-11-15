@@ -1,24 +1,27 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Этап №2
 
-Things you may want to cover:
+![изображение](https://user-images.githubusercontent.com/60661613/141678344-3e397ed8-a77f-4f36-bc3f-c276ddce622d.png)
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+>> Приложение на Heroku: <br />
+https://radiant-crag-33900.herokuapp.com
 
-* Database initialization
+### GET https://radiant-crag-33900.herokuapp.com/projects <br />
+  Example response:
+  <br />
+![изображение](https://user-images.githubusercontent.com/60661613/141678131-5788f826-6b2b-4073-8dcb-669a78f45f50.png)
 
-* How to run the test suite
+### POST https://radiant-crag-33900.herokuapp.com/todos <br />
+  Example body:
+  <br />
+![изображение](https://user-images.githubusercontent.com/60661613/141678094-d220e2dc-3ad3-435f-8b18-dc6ff4cece43.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### PATCH https://radiant-crag-33900.herokuapp.com/projects/{categoryId}/todo/{taskId} <br /> 
+  Example request and response:
+  <br />
+![изображение](https://user-images.githubusercontent.com/60661613/141678175-d5aa1809-c2ef-44e3-8536-421a30e20b91.png)
 
-* Deployment instructions
-
-* ...
+Ruby -v "2.7.4" on rails
