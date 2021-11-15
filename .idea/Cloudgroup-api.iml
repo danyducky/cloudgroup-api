@@ -63,6 +63,7 @@
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.5.2, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.0, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.3, ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-cors (v1.1.1, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v1.1.0, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v7.0.0.alpha2, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, ruby-2.7.4-p191) [gem]" level="application" />
@@ -101,12 +102,6 @@
         <option value="migration" />
         <option value="model" />
         <option value="resource" />
-        <option value="rspec:swagger" />
-        <option value="rswag:api:install" />
-        <option value="rswag:install" />
-        <option value="rswag:specs:install" />
-        <option value="rswag:ui:custom" />
-        <option value="rswag:ui:install" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="system_test" />
@@ -143,12 +138,6 @@
         <option value="migration" />
         <option value="model" />
         <option value="resource" />
-        <option value="rspec:swagger" />
-        <option value="rswag:api:install" />
-        <option value="rswag:install" />
-        <option value="rswag:specs:install" />
-        <option value="rswag:ui:custom" />
-        <option value="rswag:ui:install" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="system_test" />
@@ -346,21 +335,6 @@
           </RakeTaskImpl>
           <RakeTaskImpl description="Prints out your Rack middleware stack" fullCommand="middleware" id="middleware" />
           <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
-          <RakeTaskImpl id="rswag">
-            <subtasks>
-              <RakeTaskImpl id="specs">
-                <subtasks>
-                  <RakeTaskImpl description="Generate Swagger JSON files from integration specs" fullCommand="rswag:specs:swaggerize" id="swaggerize" />
-                </subtasks>
-              </RakeTaskImpl>
-              <RakeTaskImpl id="ui">
-                <subtasks>
-                  <RakeTaskImpl description="TODO" fullCommand="rswag:ui:copy_assets[dest]" id="copy_assets[dest]" />
-                  <RakeTaskImpl description="" fullCommand="rswag:ui:copy_assets" id="copy_assets" />
-                </subtasks>
-              </RakeTaskImpl>
-            </subtasks>
-          </RakeTaskImpl>
           <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
           <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
           <RakeTaskImpl description="Runs all tests in test folder except system ones" fullCommand="test" id="test" />
@@ -449,7 +423,6 @@
               </RakeTaskImpl>
             </subtasks>
           </RakeTaskImpl>
-          <RakeTaskImpl description="" fullCommand="rswag" id="rswag" />
           <RakeTaskImpl description="" fullCommand="tmp" id="tmp" />
           <RakeTaskImpl description="" fullCommand="tmp/cache" id="tmp/cache" />
           <RakeTaskImpl description="" fullCommand="tmp/cache/assets" id="tmp/cache/assets" />
